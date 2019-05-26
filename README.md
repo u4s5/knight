@@ -1,5 +1,5 @@
-# react-start
-Basic configuration of the project using React + Redux + Bootstrap.
+# Knight
+Basic configuration of the project using Spring + React + Redux + Bootstrap.
 
 ### Start project
 - install [java version 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
