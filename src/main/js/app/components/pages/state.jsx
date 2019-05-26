@@ -1,6 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Alert, Col, Container, Input, Jumbotron, Row} from 'reactstrap';
+import {
+    Alert,
+    Container,
+    Row,
+    Col,
+    Input,
+    Jumbotron
+} from 'reactstrap';
 import {FormattedMessage, injectIntl} from "react-intl";
 import {setValue} from "app/action/actions";
 
@@ -11,7 +18,7 @@ export function StateLayout(props) {
         <div>
             <Jumbotron>
                 <h5><FormattedMessage id='app.page.state.text'/></h5>
-            </Jumbotron>
+        </Jumbotron>
             <Container>
                 <Row>
                     <Col>
@@ -25,7 +32,7 @@ export function StateLayout(props) {
                         <Input type="text" id="inputState"
                                value={state.value}
                                onChange={value => setValue(value.target.value)}/>
-                        <br/>
+                        <br />
                     </Col>
                 </Row>
                 <Row>

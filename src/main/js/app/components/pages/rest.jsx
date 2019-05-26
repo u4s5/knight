@@ -4,18 +4,18 @@ import axios from 'axios';
 import *as url from 'app/axios/url';
 import {
     Button,
-    Col,
     Container,
+    Row,
+    Col,
     Input,
-    Jumbotron,
     Modal,
+    ModalHeader,
     ModalBody,
     ModalFooter,
-    ModalHeader,
-    Row,
-    Table
+    Table,
+    Jumbotron
 } from 'reactstrap';
-import {FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {injectIntl, intlShape, FormattedMessage} from 'react-intl';
 
 class RestLayout extends React.Component {
     constructor(props) {

@@ -1,6 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Button, Nav, Navbar, NavbarBrand, NavItem,} from 'reactstrap';
+import {
+    Button,
+    Nav,
+    Navbar,
+    NavbarBrand,
+    NavItem,
+} from 'reactstrap';
 import Locale from 'app/components/locale';
 import {FormattedMessage} from 'react-intl';
 import * as routers from 'app/constants/routes'
@@ -20,8 +26,7 @@ export default function IndexLayout(props) {
                             id='app.state.title'/></Button>{` `}
                         <Button color="primary" onClick={() => props.history.push(routers.rest())}><FormattedMessage
                             id='app.rest.title'/></Button>{` `}
-                        <Button color="primary"
-                                onClick={() => props.history.push(routers.webSocket())}><FormattedMessage
+                        <Button color="primary" onClick={() => props.history.push(routers.webSocket())}><FormattedMessage
                             id='app.webSocket.title'/></Button>{` `}
                         <Button color="primary" onClick={() => props.history.push(routers.upload())}><FormattedMessage
                             id='app.upload.title'/></Button>{` `}

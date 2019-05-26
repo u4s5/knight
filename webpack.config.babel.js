@@ -7,9 +7,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // Public path
 const publicPath = 'application';
 
-export default () =
->
-({
+export default () => ({
     devServer: {
         contentBase: `/${publicPath}/`,
         historyApiFallback: {

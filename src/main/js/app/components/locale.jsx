@@ -1,7 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {FormattedMessage} from 'react-intl';
-import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle,} from 'reactstrap';
+import {
+    Dropdown,
+    DropdownItem,
+    DropdownToggle,
+    DropdownMenu,
+} from 'reactstrap';
 
 import {setLocale} from 'app/action/actions';
 

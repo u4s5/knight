@@ -1,7 +1,17 @@
 import React from 'react';
 import SockJsClient from 'react-stomp';
 import {PulseLoader} from 'react-spinners';
-import {Alert, Button, Col, Container, Input, InputGroup, InputGroupAddon, Jumbotron, Row} from 'reactstrap';
+import {
+    Alert,
+    Container,
+    Row,
+    Col,
+    Button,
+    Input,
+    InputGroupAddon,
+    InputGroup,
+    Jumbotron
+} from 'reactstrap';
 import {FormattedMessage, injectIntl, intlShape} from "react-intl";
 
 import {baseUrl} from 'app/service/baseUrl'

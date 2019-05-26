@@ -1,9 +1,9 @@
 import React from 'react';
 import {createBrowserHistory} from 'history';
 import {Provider} from 'react-redux';
-import {applyMiddleware, createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {withRouter} from 'react-router-dom';
-import {ConnectedRouter, routerMiddleware} from 'react-router-redux';
+import {routerMiddleware, ConnectedRouter} from 'react-router-redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import LocaleProvider from 'app/application/localeProvider'
 import IndexLayout from 'app/components/layout';
@@ -17,7 +17,7 @@ export default function Application() {
         <Provider store={createStore(reducers, composeWithDevTools(applyMiddleware(routerMiddleware(history))))}>
             <LocaleProvider>
                 <ConnectedRouter history={history}>
-                    <WrappedPage/>
+                     <WrappedPage/>
                 </ConnectedRouter>
             </LocaleProvider>
         </Provider>

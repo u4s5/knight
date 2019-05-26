@@ -1,5 +1,10 @@
 import React from 'react';
-import {Col, Container, Jumbotron, Row} from 'reactstrap';
+import {
+    Container,
+    Row,
+    Col,
+    Jumbotron
+} from 'reactstrap';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import {upload} from 'app/axios/url';
@@ -47,8 +52,7 @@ export class UploadLayout extends React.Component {
                             </Dropzone>
                         </Col>
                         <Col xs="8">
-                            {image ? (<img src={`data:image/jpg;base64,${image}`} width='500px' alt="image"/>) : (
-                                <div/>)}
+                            {image ? (<img src={`data:image/jpg;base64,${image}`} width='500px' alt="image" />) : (<div />)}
                         </Col>
                     </Row>
                 </Container>
