@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ru.impressionbit.server.domain.User;
-import ru.impressionbit.server.service.ORMUserService;
+import ru.impressionbit.server.domain.Request;
+import ru.impressionbit.server.service.ORMRequestService;
 
 import java.util.List;
 
@@ -16,39 +16,41 @@ import java.util.List;
 @Controller
 public class RestController {
 
-    private final ORMUserService ormUserService;
+    private final ORMRequestService ormRequestService;
 
     @Autowired
-    public RestController(ORMUserService ormUserService) {
-        this.ormUserService = ormUserService;
+    public RestController(ORMRequestService ormRequestService) {
+        this.ormRequestService = ormRequestService;
     }
 
     @RequestMapping(
-            value = "/api/rest",
+            value = "/api/request",
             method = RequestMethod.GET)
     @ResponseBody
-    public List<User> ormFindAllUsers() {
-        return ormUserService.queryFindAllUsersJPA();
+    public List<Request> ormFindAllRequests() {
+        return ormRequestService.queryFindAllRequestsJPA();
     }
 
     @RequestMapping(
-            value = "/api/rest",
+            value = "/api/request",
             method = RequestMethod.PUT)
     @ResponseBody
-    public List<User> ormInsertUserById(
+    public List<Request> ormInsertRequestById(
+            @RequestParam(value = "placeTime") String placeTime,
+            @RequestParam(value = "styleAtmosphere") String styleAtmosphere,
+            @RequestParam(value = "money") String money,
             @RequestParam(value = "name") String name,
-            @RequestParam(value = "role") String role,
-            @RequestParam(value = "password") String password
+            @RequestParam(value = "contact") String contact
     ) {
-        return ormUserService.insertUser(name, role, password);
+        return ormRequestService.insertRequest(placeTime, styleAtmosphere, money, name, contact);
     }
 
-    @RequestMapping(
-            value = "/api/rest",
-            method = RequestMethod.DELETE)
-    @ResponseBody
-    public List<User> ormDeleteUserById(@RequestParam(value = "id") Integer id) {
-        return ormUserService.deleteUserById(id);
-    }
+//    @RequestMapping(
+//            value = "/api/rest",
+//            method = RequestMethod.DELETE)
+//    @ResponseBody
+//    public List<Request> ormDeleteUserById(@RequestParam(value = "id") Integer id) {
+//        return ormRequestService.deleteUserById(id);
+//    }
 
 }

@@ -1,38 +1,36 @@
 // EN Messages
 export default {
+
     //NavBar
-    'app.react.start': 'Knight',
-    'app.rest.title': 'Rest',
-    'app.state.title': 'State',
-    'app.webSocket.title': 'WebSocket',
-    'app.upload.title': 'Upload',
-    'app.home.title': 'Home',
     'app.language': 'Language',
+    'app.react.start': 'Knight',
+    'app.home.title': 'Home',
+    'app.request.title': 'Leave a request',
+    'app.manage.title': 'Manage',
 
-    // Page layout
-    'app.page.main.text': 'Basic configuration of the project using React + Redux + Bootstrap.',
-    'app.page.state.text': 'Reading and writing data in the application state.',
-    'app.page.upload.text': 'Uploading files to the server.',
-    'app.page.rest.text.first': 'We get data from the database of the user table from the server.',
-    'app.page.rest.text.second': 'Implemented the ability to add and remove users.',
-    'app.page.websocket.text': 'Messaging in the style of WebSocket including the use of STOMP as a sub-protocol.',
+    // Page Home
+    'app.page.main.text': 'Do you want some romance?',
+    'app.page.main.subtext': 'Theatrical interactive quests that can be customized',
 
-    // Page Users
-    'app.user.table.title': 'Users',
-    'app.user.table.id': 'ID',
-    'app.user.table.name': 'Name',
-    'app.user.table.role': 'Role',
-    'app.user.table.password': 'Password',
-    'app.user.table.delete': 'Delete',
-    'app.user.table.add': 'Add user',
+    // Page Request
+    'app.page.request.text': 'Setup your quest!',
+    'app.request.place_time': 'Specify the place and time of abduction',
+    'app.request.style_atmosphere': 'Describe the style and atmosphere of the quest',
+    'app.request.money': 'Specify the estimated budget of the event',
+    'app.request.name': 'Your name',
+    'app.request.contact': 'Contact details',
+    'app.request.send_request': 'Send request',
+    'app.request.request_sent_title': 'Request accepted',
+    'app.request.request_sent_description': 'We will contact you',
 
-    // Page Websocket
-    'app.websocket.input.message': 'Input message',
-    'app.websocket.button.send': 'Send message',
-
-    // Page layout
-    'app.state.input.message': 'The message entered in this field will be saved in the application state',
-
-    // Page upload
-    'app.upload.input.message': 'Load image',
+    // Page Manage
+    'app.page.manage.text': 'Request managing',
+    'app.manage.table.title': 'Requests',
+    'app.manage.table.id': 'ID',
+    'app.manage.table.placeTime': 'Place and time',
+    'app.manage.table.style_atmosphere': 'Style and atmosphere',
+    'app.manage.table.money': 'Budget',
+    'app.manage.table.name': 'Name',
+    'app.manage.table.contact': 'Contact',
+    'app.manage.table.accept': 'Accept',
 };

@@ -1,6 +1,6 @@
 import * as actionType from "../constants/actionType";
 
-const initialState = {locale: 'en'};
+const initialState = {locale: 'ru'};
 
 // reducer locale
 export default (state = initialState, action = {}) => {

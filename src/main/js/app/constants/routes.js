@@ -5,10 +5,10 @@ const publicPath = process.env.ASSET_PATH;
 export const index = () => `/${publicPath}/`;
 
 // Index route
-export const state = () => `/${publicPath}/state`;
+export const request = () => `/${publicPath}/request`;
 
 // Index route
-export const rest = () => `/${publicPath}/rest`;
+export const manage = () => `/${publicPath}/manage`;
 
 // Index websocket
 export const webSocket = () => `/${publicPath}/websocket`;
