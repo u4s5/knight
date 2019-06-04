@@ -7,6 +7,7 @@ export default {
     'app.home.title': 'Home',
     'app.request.title': 'Leave a request',
     'app.manage.title': 'Manage',
+    'app.control.title': 'Control (Knight/Villain)',
 
     // Page Home
     'app.page.main.text': 'Do you want some romance?',
@@ -23,7 +24,7 @@ export default {
     'app.request.request_sent_title': 'Request accepted',
     'app.request.request_sent_description': 'We will contact you',
 
-    // Page Manage
+    // Page Manage (as admin)
     'app.page.manage.text': 'Request managing',
     'app.manage.table.title': 'Requests',
     'app.manage.table.id': 'ID',
@@ -33,4 +34,15 @@ export default {
     'app.manage.table.name': 'Name',
     'app.manage.table.contact': 'Contact',
     'app.manage.table.accept': 'Accept',
+
+    // Page Manage (as Knight/Villain)
+    'app.page.control.text': 'Control quests',
+    'app.control.table.title': 'Requests',
+    'app.control.table.id': 'ID',
+    'app.control.table.placeTime': 'Place and time',
+    'app.control.table.style_atmosphere': 'Style and atmosphere',
+    'app.control.table.money': 'Budget',
+    'app.control.table.name': 'Name',
+    'app.control.table.contact': 'Contact',
+    'app.control.table.accept': 'Accept',
 };

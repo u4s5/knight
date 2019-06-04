@@ -9,6 +9,7 @@ import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import {upload} from 'app/axios/url';
 import {FormattedMessage, injectIntl} from 'react-intl';
+import { connect } from 'react-redux'
 
 export class UploadLayout extends React.Component {
     constructor(props) {

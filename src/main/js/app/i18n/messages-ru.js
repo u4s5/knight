@@ -7,6 +7,7 @@ export default {
     'app.home.title': 'Главная',
     'app.request.title': 'Оставить заявку',
     'app.manage.title': 'Управление',
+    'app.control.title': 'Управление (Рыцарь/Злодей)',
 
     // Page Home
     'app.page.main.text': 'Псс, хочешь немного романтики? ',
@@ -23,7 +24,7 @@ export default {
     'app.request.request_sent_title': 'Заявка принята',
     'app.request.request_sent_description': 'Мы с Вами свяжемся',
 
-    // Page Manage
+    // Page Manage (as admin)
     'app.page.manage.text': 'Управляйте заявками',
     'app.manage.table.title': 'Заявки',
     'app.manage.table.id': 'ID',
@@ -33,4 +34,15 @@ export default {
     'app.manage.table.name': 'Имя',
     'app.manage.table.contact': 'Контакт',
     'app.manage.table.accept': 'Принять',
+
+    // Page Manage (as Knight/Villain)
+    'app.page.control.text': 'Управляйте квестами',
+    'app.control.table.title': 'Заявки',
+    'app.control.table.id': 'ID',
+    'app.control.table.placeTime': 'Место и время',
+    'app.control.table.style_atmosphere': 'Стиль и атмосфера',
+    'app.control.table.money': 'Бюджет',
+    'app.control.table.name': 'Имя',
+    'app.control.table.contact': 'Контакт',
+    'app.control.table.accept': 'Принять',
 };

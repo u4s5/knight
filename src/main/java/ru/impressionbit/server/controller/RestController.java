@@ -32,6 +32,25 @@ public class RestController {
     }
 
     @RequestMapping(
+            value = "/api/request/handled",
+            method = RequestMethod.GET)
+    @ResponseBody
+    public List<Request> ormFindHandledRequests() {
+        return ormRequestService.queryFindHandledRequestsJPA();
+    }
+
+    @RequestMapping(
+            value = "/api/request/status",
+            method = RequestMethod.PUT)
+    @ResponseBody
+    public List<Request> ormSetRequestStatus(
+            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "status") Integer status
+    ) {
+        return ormRequestService.setRequestStatus(id, status);
+    }
+
+    @RequestMapping(
             value = "/api/request",
             method = RequestMethod.PUT)
     @ResponseBody

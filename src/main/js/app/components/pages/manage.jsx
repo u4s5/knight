@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import axios from 'axios';
 import *as url from 'app/axios/url';
 import {Button, Col, Container, Jumbotron, Row, Table} from 'reactstrap';
 import {FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {connect} from 'react-redux'
 
 class ManageLayout extends React.Component {
     constructor(props) {
@@ -104,8 +104,14 @@ class ManageLayout extends React.Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {requests.map((item, index) =>
-                                    <tr key={index}>
+                                {requests.map((item, index) =>{
+                                    var color;
+                                    if (item.status == 2) {
+                                        color = "#0f0";
+                                    } else {
+                                        color = "#fff"
+                                    }
+                                    return <tr key={index} bgcolor={color}>
                                         <th>{item.id}</th>
                                         <th>{item.placeTime}</th>
                                         <th>{item.styleAtmosphere}</th>
@@ -118,10 +124,15 @@ class ManageLayout extends React.Component {
                                                         //     .then(res =>
                                                         //         this.setState({users: res.data})
                                                         //     )
+                                                        axios.put(
+                                                            url.requestStatus,
+                                                            {},
+                                                            {params: {id: item.id, status: 1}}
+                                                        )
                                                     }}>
                                             <FormattedMessage id='app.manage.table.accept'/>
                                         </Button></th>
-                                    </tr>)
+                                    </tr>})
                                 }
                                 </tbody>
                             </Table>

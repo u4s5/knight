@@ -10,8 +10,8 @@ export const request = () => `/${publicPath}/request`;
 // Index route
 export const manage = () => `/${publicPath}/manage`;
 
-// Index websocket
-export const webSocket = () => `/${publicPath}/websocket`;
+// Index control
+export const control = () => `/${publicPath}/control`;
 
 // Index upload
 export const upload = () => `/${publicPath}/upload`;
