@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import *as url from 'app/axios/url';
-import {Button, Col, Container, Jumbotron, Row, Table} from 'reactstrap';
+import {Button, Col, Container, Jumbotron, Modal, ModalBody, ModalHeader, Row, Table} from 'reactstrap';
 import {FormattedMessage, injectIntl, intlShape} from 'react-intl';
 import {connect} from 'react-redux'
 
@@ -10,6 +10,7 @@ class ManageLayout extends React.Component {
         super(props);
         this.state = {
             modal: false,
+            messages: '',
             requests: []
         };
 
@@ -30,7 +31,7 @@ class ManageLayout extends React.Component {
     }
 
     render() {
-        const {modal, requests} = this.state;
+        const {modal, messages, requests} = this.state;
         const {intl} = this.props;
         return (
             <div>
@@ -132,6 +133,20 @@ class ManageLayout extends React.Component {
                                                     }}>
                                             <FormattedMessage id='app.manage.table.accept'/>
                                         </Button></th>
+                                        <th><Button color="secondary" size="sm"
+                                                    onClick={() => {
+                                                        axios.get(
+                                                            url.requestMessage,
+                                                            {params: {id: item.id}}
+                                                        )
+                                                            .then(res => {
+                                                                    this.setState({messages: res.data});
+                                                                    this.toggle();
+                                                                }
+                                                            )
+                                                    }}>
+                                            <FormattedMessage id='app.manage.table.info'/>
+                                        </Button></th>
                                     </tr>})
                                 }
                                 </tbody>
@@ -139,6 +154,14 @@ class ManageLayout extends React.Component {
                         </Col>
                     </Row>
                 </Container>
+                <Modal isOpen={modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>
+                        <FormattedMessage id='app.manage.messages_title'/>
+                    </ModalHeader>
+                    <ModalBody>
+                        <h4>{messages}</h4>
+                    </ModalBody>
+                </Modal>
             </div>
         )
     };

@@ -6,8 +6,9 @@ export default {
     'app.react.start': 'Рыцарь',
     'app.home.title': 'Главная',
     'app.request.title': 'Оставить заявку',
-    'app.manage.title': 'Управление',
-    'app.control.title': 'Управление (Рыцарь/Злодей)',
+    'app.manage.title': 'Управление (Диспетчер)',
+    'app.control1.title': 'Управление (Рыцарь)',
+    'app.control2.title': 'Управление (Злодей)',
 
     // Page Home
     'app.page.main.text': 'Псс, хочешь немного романтики? ',
@@ -34,6 +35,8 @@ export default {
     'app.manage.table.name': 'Имя',
     'app.manage.table.contact': 'Контакт',
     'app.manage.table.accept': 'Принять',
+    'app.manage.table.info': 'Инфо',
+    'app.manage.messages_title': 'Сообщения по заявке',
 
     // Page Manage (as Knight/Villain)
     'app.page.control.text': 'Управляйте квестами',

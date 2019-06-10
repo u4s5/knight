@@ -1,20 +1,21 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import axios from 'axios';
 import *as url from 'app/axios/url';
-import {Button, Col, Container, Jumbotron, Row, Table} from 'reactstrap';
+import {Button, Col, Container, Input, Jumbotron, Modal, ModalBody, ModalHeader, Row, Table} from 'reactstrap';
 import {FormattedMessage, injectIntl, intlShape} from 'react-intl';
 
 // const urlWebSocket = baseUrl + '/endpoint';
 // const connectionStatusOpen = 'WebSocket connection: open';
 // const connectionStatusClose = 'WebSocket connection: close';
 
-class ControlLayout extends React.Component {
+class Control1Layout extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             modal: false,
+            openedId: -1,
+            message: '',
             requests: []
         };
 
@@ -28,14 +29,14 @@ class ControlLayout extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(url.requestHandled)
+        axios.get(url.requestHandled1)
             .then(res =>
                 this.setState({requests: res.data})
             )
     }
 
     render() {
-        const {modal, requests} = this.state;
+        const {modal, openedId, message, requests} = this.state;
         const {intl} = this.props;
 
         return (
@@ -136,35 +137,67 @@ class ControlLayout extends React.Component {
                                         <th>{item.money}</th>
                                         <th>{item.name}</th>
                                         <th>{item.contact}</th>
-                                        <th><Button color="secondary" size="sm"
+                                        <th>
+                                            <Button color="secondary" size="sm"
                                                     onClick={() => {
                                                         // axios.delete(url.rest, {params: {id: item.id}})
                                                         //     .then(res =>
                                                         //         this.setState({users: res.data})
                                                         //     )
                                                         axios.put(
-                                                            url.requestStatus,
+                                                            url.requestAccepted1,
                                                             {},
-                                                            {params: {id: item.id, status: 2}}
+                                                            {params: {id: item.id}}
                                                         )
                                                     }}>
-                                            <FormattedMessage id='app.control.table.accept'/>
-                                        </Button></th>
+                                                <FormattedMessage id='app.control.table.accept'/>
+                                            </Button>
+                                        </th>
+                                        <th>
+                                            <Button color="secondary" size="sm"
+                                                    onClick={() => {
+                                                        this.setState({openedId: item.id});
+                                                        this.toggle();
+                                                    }}>
+                                                <FormattedMessage id='app.manage.table.info'/>
+                                            </Button>
+                                        </th>
                                     </tr>)
                                 }
                                 </tbody>
                             </Table>
                         </Col>
                     </Row>
-
                 </Container>
-
+                <Modal isOpen={modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>
+                        <FormattedMessage id='app.manage.messages_title'/>
+                    </ModalHeader>
+                    <ModalBody>
+                        <Input type="text" id="msg"
+                               value={message}
+                               onChange={value => this.setState({message: value.target.value})}/>
+                        <Button color="secondary" size="sm"
+                                onClick={() => {
+                                    axios.put(
+                                        url.requestMessage,
+                                        {},
+                                        {params: {id: openedId, message: message}}
+                                    )
+                                        .then(res => {
+                                            this.setState({message: ''});
+                                        })
+                                }}>
+                            <FormattedMessage id='app.control.table.accept'/>
+                        </Button>
+                    </ModalBody>
+                </Modal>
             </div>
         );
     }
 }
 
-ControlLayout.propTypes = {
+Control1Layout.propTypes = {
     intl: intlShape.isRequired
 };
 
@@ -176,6 +209,6 @@ const mapDispatchToProps = dispatch => ({
     setValue: value => dispatch(setValue(value))
 });
 
-export default injectIntl(ControlLayout);
+export default injectIntl(Control1Layout);
 
 // export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(ControlLayout));

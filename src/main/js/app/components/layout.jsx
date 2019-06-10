@@ -20,8 +20,10 @@ export default function IndexLayout(props) {
                             id='app.request.title'/></Button>{` `}
                         <Button color="primary" onClick={() => props.history.push(routers.manage())}><FormattedMessage
                             id='app.manage.title'/></Button>{` `}
-                        <Button color="primary" onClick={() => props.history.push(routers.control())}><FormattedMessage
-                            id='app.control.title'/></Button>{` `}
+                        <Button color="primary" onClick={() => props.history.push(routers.control1())}><FormattedMessage
+                            id='app.control1.title'/></Button>{` `}
+                        <Button color="primary" onClick={() => props.history.push(routers.control2())}><FormattedMessage
+                            id='app.control2.title'/></Button>{` `}
                         {/*<Button color="primary" onClick={() => props.history.push(routers.upload())}><FormattedMessage*/}
                         {/*    id='app.upload.title'/></Button>{` `}*/}
                     </NavItem>

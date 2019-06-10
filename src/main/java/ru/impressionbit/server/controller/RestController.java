@@ -32,11 +32,39 @@ public class RestController {
     }
 
     @RequestMapping(
-            value = "/api/request/handled",
+            value = "/api/request/handled1",
             method = RequestMethod.GET)
     @ResponseBody
-    public List<Request> ormFindHandledRequests() {
-        return ormRequestService.queryFindHandledRequestsJPA();
+    public List<Request> ormFindHandled1Requests() {
+        return ormRequestService.queryFindHandled1RequestsJPA();
+    }
+
+    @RequestMapping(
+            value = "/api/request/handled2",
+            method = RequestMethod.GET)
+    @ResponseBody
+    public List<Request> ormFindHandled2Requests() {
+        return ormRequestService.queryFindHandled2RequestsJPA();
+    }
+
+    @RequestMapping(
+            value = "/api/request/accepted1",
+            method = RequestMethod.PUT)
+    @ResponseBody
+    public List<Request> ormSetRequestAccepted1(
+            @RequestParam(value = "id") Integer id
+    ) {
+        return ormRequestService.setAccepted1(id);
+    }
+
+    @RequestMapping(
+            value = "/api/request/accepted2",
+            method = RequestMethod.PUT)
+    @ResponseBody
+    public List<Request> ormSetRequestAccepted2(
+            @RequestParam(value = "id") Integer id
+    ) {
+        return ormRequestService.setAccepted2(id);
     }
 
     @RequestMapping(
@@ -48,6 +76,27 @@ public class RestController {
             @RequestParam(value = "status") Integer status
     ) {
         return ormRequestService.setRequestStatus(id, status);
+    }
+
+    @RequestMapping(
+            value = "/api/request/message",
+            method = RequestMethod.PUT)
+    @ResponseBody
+    public List<Request> ormSetRequestMessage(
+            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "message") String message
+    ) {
+        return ormRequestService.setRequestMessage(id, message);
+    }
+
+    @RequestMapping(
+            value = "/api/request/message",
+            method = RequestMethod.GET)
+    @ResponseBody
+    public String ormGetRequestMessage(
+            @RequestParam(value = "id") Integer id
+    ) {
+        return ormRequestService.getRequestMessage(id);
     }
 
     @RequestMapping(

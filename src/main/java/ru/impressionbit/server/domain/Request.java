@@ -14,25 +14,34 @@ public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Integer id;
+    public Integer id;
 
     @Column(name = "PLACETIME")
-    private String placeTime;
+    public String placeTime;
 
     @Column(name = "STYLEATMOSPHERE")
-    private String styleAtmosphere;
+    public String styleAtmosphere;
 
     @Column(name = "MONEY")
-    private String money;
+    public String money;
 
     @Column(name = "NAME")
-    private String name;
+    public String name;
 
     @Column(name = "CONTACT")
-    private String contact;
+    public String contact;
 
     @Column(name = "STATUS")
-    private Integer status;
+    public Integer status;
+
+    @Column(name = "ACCEPTED1")
+    public Boolean accepted1;
+
+    @Column(name = "ACCEPTED2")
+    public Boolean accepted2;
+
+    @Column(name = "MESSAGES")
+    public String messages;
 
     public enum Status {
         INITIAL(0), HANDLED(1), ACCEPTED(2), STARTED(3), COMPLETED(4);

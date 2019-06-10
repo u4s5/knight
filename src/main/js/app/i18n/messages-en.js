@@ -6,8 +6,9 @@ export default {
     'app.react.start': 'Knight',
     'app.home.title': 'Home',
     'app.request.title': 'Leave a request',
-    'app.manage.title': 'Manage',
-    'app.control.title': 'Control (Knight/Villain)',
+    'app.manage.title': 'Control (Manager)',
+    'app.control1.title': 'Control (Knight)',
+    'app.control2.title': 'Control (Villain)',
 
     // Page Home
     'app.page.main.text': 'Do you want some romance?',
@@ -34,6 +35,8 @@ export default {
     'app.manage.table.name': 'Name',
     'app.manage.table.contact': 'Contact',
     'app.manage.table.accept': 'Accept',
+    'app.manage.table.info': 'Info',
+    'app.manage.messages_title': 'Messages about request',
 
     // Page Manage (as Knight/Villain)
     'app.page.control.text': 'Control quests',
